@@ -1,0 +1,4585 @@
+{
+  "summary": {
+    "taskCount": 79,
+    "configCount": 166,
+    "disciplineCount": 5,
+    "capabilityCount": 5,
+    "skillCount": 9,
+    "coreExperimentCount": 33,
+    "coreConfigCount": 74,
+    "modelHarnessPairCount": 8,
+    "scheduledRollouts": 592,
+    "submittedRollouts": 592,
+    "passedRollouts": 84,
+    "overallExpPassPct": 8.7,
+    "successfulExpUnits": 23,
+    "totalExpUnits": 264,
+    "endedMeanSteps": null,
+    "successfulMeanSteps": null,
+    "failedMeanSteps": null,
+    "observedAtShanghai": "2026-11-14T19:47:00+08:00",
+    "overallCfgPassPct": 14.2
+  },
+  "disciplineCounts": {
+    "Mechanics": 20,
+    "Optics": 21,
+    "Electromagnetism": 20,
+    "Thermodynamics": 9,
+    "Modern Physics": 9
+  },
+  "capabilityCounts": {
+    "metrology": 16,
+    "alignment": 16,
+    "nullfield": 16,
+    "transient": 16,
+    "inference": 15
+  },
+  "capabilities": [
+    {
+      "id": "metrology",
+      "label": "Precision Metrology & Zeroing",
+      "color": "#f5b841",
+      "short": "Metrology"
+    },
+    {
+      "id": "alignment",
+      "label": "Optical Alignment & Tuning",
+      "color": "#38bdf8",
+      "short": "Optics & Beam"
+    },
+    {
+      "id": "nullfield",
+      "label": "Null-Balance & Field Control",
+      "color": "#34d399",
+      "short": "Null & Field"
+    },
+    {
+      "id": "transient",
+      "label": "Dynamic & Transient Tracking",
+      "color": "#fb7185",
+      "short": "Dynamics & Cycle"
+    },
+    {
+      "id": "inference",
+      "label": "First-Principles Inversion",
+      "color": "#a78bfa",
+      "short": "Law Inversion"
+    }
+  ],
+  "pairs": [
+    {
+      "pairId": "gpt-6-astra@codex",
+      "model": "gpt-6-astra",
+      "label": "GPT-6-Astra",
+      "provider": "OpenAI",
+      "harness": "codex",
+      "color": "#2563eb",
+      "successfulExperiments": 12,
+      "totalExperiments": 33,
+      "expPct": 36.4,
+      "passedConfigurations": 35,
+      "submittedConfigurations": 74,
+      "totalConfigurations": 74,
+      "cfgPct": 47.3,
+      "endedCount": 74,
+      "runningCount": 0,
+      "endedMeanSteps": null,
+      "endedMedianSteps": null,
+      "successfulMeanSteps": null,
+      "disciplines": {
+        "Mechanics": {
+          "expPassed": 4,
+          "expTotal": 9,
+          "expPct": 44.4,
+          "cfgPassed": 11,
+          "cfgTotal": 26,
+          "cfgPct": 42.3
+        },
+        "Electromagnetism": {
+          "expPassed": 2,
+          "expTotal": 7,
+          "expPct": 28.6,
+          "cfgPassed": 6,
+          "cfgTotal": 14,
+          "cfgPct": 42.9
+        },
+        "Thermodynamics": {
+          "expPassed": 0,
+          "expTotal": 3,
+          "expPct": 0.0,
+          "cfgPassed": 2,
+          "cfgTotal": 6,
+          "cfgPct": 33.3
+        },
+        "Optics": {
+          "expPassed": 3,
+          "expTotal": 7,
+          "expPct": 42.9,
+          "cfgPassed": 7,
+          "cfgTotal": 14,
+          "cfgPct": 50.0
+        },
+        "Modern Physics": {
+          "expPassed": 3,
+          "expTotal": 7,
+          "expPct": 42.9,
+          "cfgPassed": 9,
+          "cfgTotal": 14,
+          "cfgPct": 64.3
+        }
+      }
+    },
+    {
+      "pairId": "claude-opus-5.5@claude-code",
+      "model": "claude-opus-5.5",
+      "label": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "harness": "claude-code",
+      "color": "#d6603a",
+      "successfulExperiments": 10,
+      "totalExperiments": 33,
+      "expPct": 30.3,
+      "passedConfigurations": 32,
+      "submittedConfigurations": 74,
+      "totalConfigurations": 74,
+      "cfgPct": 43.2,
+      "endedCount": 74,
+      "runningCount": 0,
+      "endedMeanSteps": null,
+      "endedMedianSteps": null,
+      "successfulMeanSteps": null,
+      "disciplines": {
+        "Mechanics": {
+          "expPassed": 4,
+          "expTotal": 9,
+          "expPct": 44.4,
+          "cfgPassed": 11,
+          "cfgTotal": 26,
+          "cfgPct": 42.3
+        },
+        "Electromagnetism": {
+          "expPassed": 1,
+          "expTotal": 7,
+          "expPct": 14.3,
+          "cfgPassed": 4,
+          "cfgTotal": 14,
+          "cfgPct": 28.6
+        },
+        "Thermodynamics": {
+          "expPassed": 0,
+          "expTotal": 3,
+          "expPct": 0.0,
+          "cfgPassed": 2,
+          "cfgTotal": 6,
+          "cfgPct": 33.3
+        },
+        "Optics": {
+          "expPassed": 3,
+          "expTotal": 7,
+          "expPct": 42.9,
+          "cfgPassed": 8,
+          "cfgTotal": 14,
+          "cfgPct": 57.1
+        },
+        "Modern Physics": {
+          "expPassed": 2,
+          "expTotal": 7,
+          "expPct": 28.6,
+          "cfgPassed": 7,
+          "cfgTotal": 14,
+          "cfgPct": 50.0
+        }
+      }
+    },
+    {
+      "pairId": "kimi-k3.1@codex",
+      "model": "kimi-k3.1",
+      "label": "Kimi K3.1",
+      "provider": "Moonshot",
+      "harness": "codex",
+      "color": "#2491a8",
+      "successfulExperiments": 0,
+      "totalExperiments": 33,
+      "expPct": 0.0,
+      "passedConfigurations": 6,
+      "submittedConfigurations": 74,
+      "totalConfigurations": 74,
+      "cfgPct": 8.1,
+      "endedCount": 74,
+      "runningCount": 0,
+      "endedMeanSteps": null,
+      "endedMedianSteps": null,
+      "successfulMeanSteps": null,
+      "disciplines": {
+        "Mechanics": {
+          "expPassed": 0,
+          "expTotal": 9,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 26,
+          "cfgPct": 0.0
+        },
+        "Electromagnetism": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 1,
+          "cfgTotal": 14,
+          "cfgPct": 7.1
+        },
+        "Thermodynamics": {
+          "expPassed": 0,
+          "expTotal": 3,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 6,
+          "cfgPct": 0.0
+        },
+        "Optics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 2,
+          "cfgTotal": 14,
+          "cfgPct": 14.3
+        },
+        "Modern Physics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 3,
+          "cfgTotal": 14,
+          "cfgPct": 21.4
+        }
+      }
+    },
+    {
+      "pairId": "kimi-k3.1@claude-code",
+      "model": "kimi-k3.1",
+      "label": "Kimi K3.1",
+      "provider": "Moonshot",
+      "harness": "claude-code",
+      "color": "#0891b2",
+      "successfulExperiments": 0,
+      "totalExperiments": 33,
+      "expPct": 0.0,
+      "passedConfigurations": 5,
+      "submittedConfigurations": 74,
+      "totalConfigurations": 74,
+      "cfgPct": 6.8,
+      "endedCount": 74,
+      "runningCount": 0,
+      "endedMeanSteps": null,
+      "endedMedianSteps": null,
+      "successfulMeanSteps": null,
+      "disciplines": {
+        "Mechanics": {
+          "expPassed": 0,
+          "expTotal": 9,
+          "expPct": 0.0,
+          "cfgPassed": 2,
+          "cfgTotal": 26,
+          "cfgPct": 7.7
+        },
+        "Electromagnetism": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        },
+        "Thermodynamics": {
+          "expPassed": 0,
+          "expTotal": 3,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 6,
+          "cfgPct": 0.0
+        },
+        "Optics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 1,
+          "cfgTotal": 14,
+          "cfgPct": 7.1
+        },
+        "Modern Physics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 2,
+          "cfgTotal": 14,
+          "cfgPct": 14.3
+        }
+      }
+    },
+    {
+      "pairId": "deepseek-v4.1-flash@claude-code",
+      "model": "deepseek-v4.1-flash",
+      "label": "DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "harness": "claude-code",
+      "color": "#14b8a6",
+      "successfulExperiments": 1,
+      "totalExperiments": 33,
+      "expPct": 3.0,
+      "passedConfigurations": 3,
+      "submittedConfigurations": 74,
+      "totalConfigurations": 74,
+      "cfgPct": 4.1,
+      "endedCount": 74,
+      "runningCount": 0,
+      "endedMeanSteps": null,
+      "endedMedianSteps": null,
+      "successfulMeanSteps": null,
+      "disciplines": {
+        "Mechanics": {
+          "expPassed": 0,
+          "expTotal": 9,
+          "expPct": 0.0,
+          "cfgPassed": 1,
+          "cfgTotal": 26,
+          "cfgPct": 3.8
+        },
+        "Electromagnetism": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        },
+        "Thermodynamics": {
+          "expPassed": 0,
+          "expTotal": 3,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 6,
+          "cfgPct": 0.0
+        },
+        "Optics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        },
+        "Modern Physics": {
+          "expPassed": 1,
+          "expTotal": 7,
+          "expPct": 14.3,
+          "cfgPassed": 2,
+          "cfgTotal": 14,
+          "cfgPct": 14.3
+        }
+      }
+    },
+    {
+      "pairId": "deepseek-v4.1-flash@codex",
+      "model": "deepseek-v4.1-flash",
+      "label": "DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "harness": "codex",
+      "color": "#0d9488",
+      "successfulExperiments": 0,
+      "totalExperiments": 33,
+      "expPct": 0.0,
+      "passedConfigurations": 2,
+      "submittedConfigurations": 74,
+      "totalConfigurations": 74,
+      "cfgPct": 2.7,
+      "endedCount": 74,
+      "runningCount": 0,
+      "endedMeanSteps": null,
+      "endedMedianSteps": null,
+      "successfulMeanSteps": null,
+      "disciplines": {
+        "Mechanics": {
+          "expPassed": 0,
+          "expTotal": 9,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 26,
+          "cfgPct": 0.0
+        },
+        "Electromagnetism": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        },
+        "Thermodynamics": {
+          "expPassed": 0,
+          "expTotal": 3,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 6,
+          "cfgPct": 0.0
+        },
+        "Optics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 1,
+          "cfgTotal": 14,
+          "cfgPct": 7.1
+        },
+        "Modern Physics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 1,
+          "cfgTotal": 14,
+          "cfgPct": 7.1
+        }
+      }
+    },
+    {
+      "pairId": "glm-5.3-flash@codex",
+      "model": "glm-5.3-flash",
+      "label": "GLM-5.3 Flash",
+      "provider": "Zhipu AI",
+      "harness": "codex",
+      "color": "#8b5cf6",
+      "successfulExperiments": 0,
+      "totalExperiments": 33,
+      "expPct": 0.0,
+      "passedConfigurations": 1,
+      "submittedConfigurations": 74,
+      "totalConfigurations": 74,
+      "cfgPct": 1.4,
+      "endedCount": 74,
+      "runningCount": 0,
+      "endedMeanSteps": null,
+      "endedMedianSteps": null,
+      "successfulMeanSteps": null,
+      "disciplines": {
+        "Mechanics": {
+          "expPassed": 0,
+          "expTotal": 9,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 26,
+          "cfgPct": 0.0
+        },
+        "Electromagnetism": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        },
+        "Thermodynamics": {
+          "expPassed": 0,
+          "expTotal": 3,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 6,
+          "cfgPct": 0.0
+        },
+        "Optics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        },
+        "Modern Physics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 1,
+          "cfgTotal": 14,
+          "cfgPct": 7.1
+        }
+      }
+    },
+    {
+      "pairId": "glm-5.3-flash@claude-code",
+      "model": "glm-5.3-flash",
+      "label": "GLM-5.3 Flash",
+      "provider": "Zhipu AI",
+      "harness": "claude-code",
+      "color": "#7c3aed",
+      "successfulExperiments": 0,
+      "totalExperiments": 33,
+      "expPct": 0.0,
+      "passedConfigurations": 0,
+      "submittedConfigurations": 74,
+      "totalConfigurations": 74,
+      "cfgPct": 0.0,
+      "endedCount": 74,
+      "runningCount": 0,
+      "endedMeanSteps": null,
+      "endedMedianSteps": null,
+      "successfulMeanSteps": null,
+      "disciplines": {
+        "Mechanics": {
+          "expPassed": 0,
+          "expTotal": 9,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 26,
+          "cfgPct": 0.0
+        },
+        "Electromagnetism": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        },
+        "Thermodynamics": {
+          "expPassed": 0,
+          "expTotal": 3,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 6,
+          "cfgPct": 0.0
+        },
+        "Optics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        },
+        "Modern Physics": {
+          "expPassed": 0,
+          "expTotal": 7,
+          "expPct": 0.0,
+          "cfgPassed": 0,
+          "cfgTotal": 14,
+          "cfgPct": 0.0
+        }
+      }
+    }
+  ],
+  "matrix": [
+    {
+      "id": "airtrack",
+      "title": "Air Track Inertial Mass",
+      "discipline": "Mechanics",
+      "capability": "metrology",
+      "passedPairs": 2,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "bridge",
+      "title": "Wheatstone Bridge Null Resistance",
+      "discipline": "Electromagnetism",
+      "capability": "nullfield",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "caliper",
+      "title": "Vernier Caliper Cylinder Metrology",
+      "discipline": "Mechanics",
+      "capability": "metrology",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 8,
+          "submittedCfg": 8
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 8,
+          "submittedCfg": 8
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 8,
+          "submittedCfg": 8
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 8,
+          "submittedCfg": 8
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 8,
+          "submittedCfg": 8
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 8,
+          "submittedCfg": 8
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 8,
+          "submittedCfg": 8
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 8,
+          "submittedCfg": 8
+        }
+      }
+    },
+    {
+      "id": "calorimetry",
+      "title": "Metal Specific Heat Calorimetry",
+      "discipline": "Thermodynamics",
+      "capability": "transient",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "conductivity",
+      "title": "Steady-State Thermal Conductivity",
+      "discipline": "Thermodynamics",
+      "capability": "transient",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "diffraction",
+      "title": "Single-Slit Laser Diffraction",
+      "discipline": "Optics",
+      "capability": "alignment",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "field",
+      "title": "Electrostatic Field Mapping",
+      "discipline": "Electromagnetism",
+      "capability": "nullfield",
+      "passedPairs": 2,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "franckhertz",
+      "title": "Franck-Hertz Excitation Energy",
+      "discipline": "Modern Physics",
+      "capability": "inference",
+      "passedPairs": 2,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "halflife",
+      "title": "Radioactive Isotope Half-Life",
+      "discipline": "Modern Physics",
+      "capability": "inference",
+      "passedPairs": 3,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "hall",
+      "title": "Hall Effect Carrier Concentration",
+      "discipline": "Electromagnetism",
+      "capability": "nullfield",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "hysteresis",
+      "title": "Ferromagnetic Hysteresis Loop",
+      "discipline": "Electromagnetism",
+      "capability": "nullfield",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "lens",
+      "title": "Convex Lens Focal Length",
+      "discipline": "Optics",
+      "capability": "alignment",
+      "passedPairs": 1,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "michelson",
+      "title": "Michelson Interferometer Wavelength",
+      "discipline": "Optics",
+      "capability": "alignment",
+      "passedPairs": 2,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "micrometer",
+      "title": "Micrometer Screw Fine Wire",
+      "discipline": "Mechanics",
+      "capability": "metrology",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "newtonrings",
+      "title": "Newton's Rings Curvature Radius",
+      "discipline": "Optics",
+      "capability": "metrology",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "oildrop",
+      "title": "Millikan Oil Drop Elementary Charge",
+      "discipline": "Modern Physics",
+      "capability": "inference",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "oscilloscope",
+      "title": "Oscilloscope Signal Capture",
+      "discipline": "Electromagnetism",
+      "capability": "nullfield",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "pendulum",
+      "title": "Simple Pendulum Gravity",
+      "discipline": "Mechanics",
+      "capability": "metrology",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 3,
+          "expectedCfg": 4,
+          "submittedCfg": 4
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 4,
+          "submittedCfg": 4
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 4,
+          "submittedCfg": 4
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 4,
+          "submittedCfg": 4
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 4,
+          "submittedCfg": 4
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 3,
+          "expectedCfg": 4,
+          "submittedCfg": 4
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 4,
+          "submittedCfg": 4
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 4,
+          "submittedCfg": 4
+        }
+      }
+    },
+    {
+      "id": "photoelectric",
+      "title": "Photoelectric Planck's Constant",
+      "discipline": "Modern Physics",
+      "capability": "inference",
+      "passedPairs": 1,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "polarization",
+      "title": "Polarizer Axis & Extinction Ratio",
+      "discipline": "Optics",
+      "capability": "alignment",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "potentiometer",
+      "title": "Slide-Wire Potentiometer EMF",
+      "discipline": "Electromagnetism",
+      "capability": "nullfield",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "radioactivity",
+      "title": "Gamma Attenuation Coefficient",
+      "discipline": "Modern Physics",
+      "capability": "inference",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "rlc",
+      "title": "Series RLC Resonance",
+      "discipline": "Electromagnetism",
+      "capability": "nullfield",
+      "passedPairs": 1,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "sound",
+      "title": "Ultrasonic Speed of Sound",
+      "discipline": "Mechanics",
+      "capability": "transient",
+      "passedPairs": 2,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "spectrometer",
+      "title": "Grating Spectrometer Wavelength",
+      "discipline": "Optics",
+      "capability": "alignment",
+      "passedPairs": 2,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "string",
+      "title": "Standing-Wave String Density",
+      "discipline": "Mechanics",
+      "capability": "transient",
+      "passedPairs": 2,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "thermocouple",
+      "title": "Thermocouple Calibration",
+      "discipline": "Thermodynamics",
+      "capability": "transient",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "trifilar",
+      "title": "Trifilar Pendulum Moment of Inertia",
+      "discipline": "Mechanics",
+      "capability": "metrology",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "viscosity",
+      "title": "Falling-Ball Stokes Viscosity",
+      "discipline": "Mechanics",
+      "capability": "metrology",
+      "passedPairs": 2,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "waveplate",
+      "title": "Quarter-Wave Plate Retardance",
+      "discipline": "Optics",
+      "capability": "alignment",
+      "passedPairs": 1,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "pass",
+          "passedCfg": 2,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "young",
+      "title": "Optical Lever Young's Modulus",
+      "discipline": "Mechanics",
+      "capability": "metrology",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "zeeman",
+      "title": "Normal Zeeman Magnetic Splitting",
+      "discipline": "Modern Physics",
+      "capability": "inference",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "partial",
+          "passedCfg": 1,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    },
+    {
+      "id": "zeemanem",
+      "title": "Anomalous Zeeman Charge-to-Mass",
+      "discipline": "Modern Physics",
+      "capability": "inference",
+      "passedPairs": 0,
+      "cells": {
+        "claude-opus-5.5@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "deepseek-v4.1-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "glm-5.3-flash@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "gpt-6-astra@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@claude-code": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        },
+        "kimi-k3.1@codex": {
+          "status": "fail",
+          "passedCfg": 0,
+          "expectedCfg": 2,
+          "submittedCfg": 2
+        }
+      }
+    }
+  ],
+  "labs": [
+    {
+      "index": 0,
+      "id": "caliper",
+      "title": "Vernier Caliper Cylinder Metrology",
+      "zhTitle": "圆筒尺寸测量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "metrology",
+      "configs": 8,
+      "inCore33": true,
+      "thumb": "thumbs/caliper.jpg",
+      "video": null,
+      "goal": "Measure the cylinder's outer diameter D, inner diameter d, and length H, in millimeters.",
+      "answerSignature": "answer(D, d, H)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 1,
+      "id": "lens",
+      "title": "Convex Lens Focal Length",
+      "zhTitle": "凸透镜焦距测量",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/lens.jpg",
+      "video": null,
+      "goal": "Measure the focal length f of the converging lens, in millimeters. Submit {\"action\":\"answer\",\"f\":number}.",
+      "answerSignature": "answer(f)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "concave-lens",
+      "title": "Concave Lens Negative Focal Length",
+      "zhTitle": "凹透镜负焦距测量",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/concave-lens.jpg",
+      "video": null,
+      "goal": "Measure the signed focal length of the concave lens. Submit {f} in millimetres.",
+      "answerSignature": "answer(...)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "autocollimation",
+      "title": "Lens Autocollimation",
+      "zhTitle": "凸透镜自准直测前焦距",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/autocollimation.jpg",
+      "video": null,
+      "goal": "Measure the front focal distance of the lens from its entrance vertex. Submit {\"action\":\"answer\",\"f\":number} in millimetres.",
+      "answerSignature": "{\"action\":\"answer\",\"f\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "polarization",
+      "title": "Polarizer Axis & Extinction Ratio",
+      "zhTitle": "偏振器透振轴偏移与消光比",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/polarization.jpg",
+      "video": null,
+      "goal": "Measure the relative transmission-axis offset theta0 of the two polarizer mounts (degrees modulo 180) and the analyzer extinction ratio r (dimensionless). Submit {\"action\":\"answer\",\"theta0\":number,\"r\":number}.",
+      "answerSignature": "answer(theta0, r)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "bridge",
+      "title": "Wheatstone Bridge Null Resistance",
+      "zhTitle": "惠斯通电桥测电阻",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/bridge.jpg",
+      "video": null,
+      "goal": "Measure the resistance of the unknown resistor, in ohms. Submit {\"action\":\"answer\",\"R\":number}.",
+      "answerSignature": "answer(R)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "kelvin-resistance",
+      "title": "Four-Wire Kelvin Low Resistance",
+      "zhTitle": "四端低电阻测量",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/kelvin-resistance.jpg",
+      "video": null,
+      "goal": "Measure the specimen resistance and the combined series resistance of the two force leads. Submit {\"action\":\"answer\",\"R\":number,\"R_leads\":number}, both in milliohms.",
+      "answerSignature": "answer(R,R_leads)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "pendulum",
+      "title": "Simple Pendulum Gravity",
+      "zhTitle": "外星单摆测重力加速度",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "metrology",
+      "configs": 4,
+      "inCore33": true,
+      "thumb": "thumbs/pendulum.jpg",
+      "video": null,
+      "goal": "Measure the gravitational acceleration on this unfamiliar planet, in m/s². Submit {\"action\":\"answer\",\"g\":number}.",
+      "answerSignature": "answer(g)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "pendulum-damping",
+      "title": "Viscous Pendulum Damping",
+      "zhTitle": "单摆黏性阻尼测量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/pendulum-damping.jpg",
+      "video": null,
+      "goal": "Measure the pendulum's viscous damping coefficient γ in s⁻¹, defined by the drag force −mγv. Submit {\"action\":\"answer\",\"gamma\":number}.",
+      "answerSignature": "answer(gamma)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 9,
+      "id": "micrometer",
+      "title": "Micrometer Screw Fine Wire",
+      "zhTitle": "螺旋测微器测细丝直径",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/micrometer.jpg",
+      "video": null,
+      "goal": "Measure the diameter of the wire, in millimeters. Submit {\"action\":\"answer\",\"D\":number}.",
+      "answerSignature": "answer(D)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 10,
+      "id": "potentiometer",
+      "title": "Slide-Wire Potentiometer EMF",
+      "zhTitle": "电位差计测电动势",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/potentiometer.jpg",
+      "video": null,
+      "goal": "Measure the electromotive force of the unknown cell, in volts. Submit {\"action\":\"answer\",\"E\":number}.",
+      "answerSignature": "answer(E)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 11,
+      "id": "oscilloscope",
+      "title": "Oscilloscope Signal Capture",
+      "zhTitle": "示波器测信号参数",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/oscilloscope.jpg",
+      "video": "videos/shot_oscilloscope.mp4",
+      "goal": "Measure the unknown signal's frequency (Hz), peak-to-peak voltage (V), and DC offset (V); submit {f,Vpp,offset}.",
+      "answerSignature": "answer(...)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 12,
+      "id": "oscilloscope-xy",
+      "title": "XY Lissajous Frequency Ratio",
+      "zhTitle": "示波器三组信号测频",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/oscilloscope-xy.jpg",
+      "video": null,
+      "goal": "Measure the frequencies of the three output settings on source A. Submit {f1,f2,f3} in Hz in selector order.",
+      "answerSignature": "answer(...)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 13,
+      "id": "thermocouple",
+      "title": "Thermocouple Calibration",
+      "zhTitle": "热电偶定标与温度测量",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/thermocouple.jpg",
+      "video": null,
+      "goal": "Measure the temperature of the unknown bath X, in degrees Celsius. Submit {\"action\":\"answer\",\"T\":number}.",
+      "answerSignature": "answer(T)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 14,
+      "id": "thermocouple-step",
+      "title": "Thermocouple Step Time Constant",
+      "zhTitle": "热电偶阶跃响应时间",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/thermocouple-step.jpg",
+      "video": null,
+      "goal": "Measure the times to 50% and 90% of the indicated voltage step when the hot probe goes from ambient equilibrium to full immersion in bath H. Submit {\"action\":\"answer\",\"t50\":number,\"t90\":number}, both in seconds.",
+      "answerSignature": "answer(t50,t90)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 15,
+      "id": "diffraction",
+      "title": "Single-Slit Laser Diffraction",
+      "zhTitle": "单缝衍射测初始缝宽",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/diffraction.jpg",
+      "video": null,
+      "goal": "Measure the slit width at the start of the experiment, in millimeters. Submit {\"action\":\"answer\",\"a\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"a\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 16,
+      "id": "sound",
+      "title": "Ultrasonic Speed of Sound",
+      "zhTitle": "声速测量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Acoustics & Waves",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/sound.jpg",
+      "video": null,
+      "goal": "Measure the speed of sound in the unknown medium; submit {c} in m/s.",
+      "answerSignature": "answer(...)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 17,
+      "id": "viscosity",
+      "title": "Falling-Ball Stokes Viscosity",
+      "zhTitle": "落球法测液体粘度",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Fluids",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/viscosity.jpg",
+      "video": null,
+      "goal": "Measure the liquid's dynamic viscosity, in Pa·s. Submit {\"action\":\"answer\",\"eta\":number}.",
+      "answerSignature": "answer(eta)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 18,
+      "id": "viscosity-density",
+      "title": "Dual-Sphere Viscosity & Density",
+      "zhTitle": "落球法测液体黏度与密度",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Fluids",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/viscosity-density.jpg",
+      "video": null,
+      "goal": "Measure the dynamic viscosity and density of the liquid. Submit {\"action\":\"answer\",\"eta\":number,\"rho\":number}, in Pa·s and kg/m³ respectively.",
+      "answerSignature": "answer(eta,rho)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 19,
+      "id": "field",
+      "title": "Electrostatic Field Mapping",
+      "zhTitle": "静电场分量测量",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/field.jpg",
+      "video": null,
+      "goal": "Measure the electric-field components at P under the voltage marked beside P. Submit {\"action\":\"answer\",\"Ex\":number,\"Ey\":number} in V/m.",
+      "answerSignature": "answer(Ex, Ey)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 20,
+      "id": "airtrack",
+      "title": "Air Track Inertial Mass",
+      "zhTitle": "气垫导轨测滑块质量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/airtrack.jpg",
+      "video": null,
+      "goal": "Measure the mass of glider X, in kilograms. Submit {\"action\":\"answer\",\"m\":number}.",
+      "answerSignature": "answer(m)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 21,
+      "id": "airtrack-loads",
+      "title": "Air Track Multi-Load Dynamics",
+      "zhTitle": "气垫导轨多载荷质量与重力测量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/airtrack-loads.jpg",
+      "video": null,
+      "goal": "Measure the glider mass m in kg and local gravitational acceleration g in m/s². Submit {\"action\":\"answer\",\"m\":number,\"g\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"m\":number,\"g\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 22,
+      "id": "string",
+      "title": "Standing-Wave String Density",
+      "zhTitle": "弦振动测线密度",
+      "discipline": "Mechanics",
+      "subDiscipline": "Acoustics & Waves",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/string.jpg",
+      "video": "videos/shot_string.mp4",
+      "goal": "Measure the linear mass density of the string, in kg/m. Submit {\"action\":\"answer\",\"mu\":number}.",
+      "answerSignature": "answer(mu)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 23,
+      "id": "string-stiffness",
+      "title": "Stiff String Bending Rigidity",
+      "zhTitle": "驻波法测刚性弦的线密度与抗弯刚度",
+      "discipline": "Mechanics",
+      "subDiscipline": "Acoustics & Waves",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/string-stiffness.jpg",
+      "video": null,
+      "goal": "Measure the linear density and flexural rigidity of the test filament. Submit {\"action\":\"answer\",\"mu\":number,\"B\":number} in kg/m and N·m² respectively.",
+      "answerSignature": "answer(mu,B)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 24,
+      "id": "calorimetry",
+      "title": "Metal Specific Heat Calorimetry",
+      "zhTitle": "混合法测金属比热容",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/calorimetry.jpg",
+      "video": null,
+      "goal": "Measure the specific heat capacity of specimen X, in J/(kg K). Submit {\"action\":\"answer\",\"c\":number}.",
+      "answerSignature": "answer(c)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 25,
+      "id": "hall",
+      "title": "Hall Effect Carrier Concentration",
+      "zhTitle": "霍尔效应测磁场与载流子浓度",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/hall.jpg",
+      "video": null,
+      "goal": "Measure the magnetic-field magnitude B at P under the marked excitation condition and the carrier concentration n of sample X. Submit {\"action\":\"answer\",\"B\":tesla,\"n\":per_cubic_metre}.",
+      "answerSignature": "answer(B,n)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 26,
+      "id": "hall-gradient",
+      "title": "Solenoid Axial Field Gradient",
+      "zhTitle": "霍尔探头测轴向磁场梯度",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/hall-gradient.jpg",
+      "video": null,
+      "goal": "At +1.500 A in opposing-coil mode, measure the zero-field height z0 on the coil axis and the signed axial gradient G = dBz/dz at z0. Submit {\"action\":\"answer\",\"G\":number,\"z0\":number}, in T/m and mm.",
+      "answerSignature": "{\"action\":\"answer\",\"G\":number,\"z0\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 27,
+      "id": "rlc",
+      "title": "Series RLC Resonance",
+      "zhTitle": "RLC 测电感与串联电阻",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/rlc.jpg",
+      "video": null,
+      "goal": "Measure the unknown coil's inductance L (H) and series resistance R (ohms); submit {L,R}.",
+      "answerSignature": "answer(...)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 28,
+      "id": "rlc-capacitor",
+      "title": "Dual-Trace Capacitor ESR",
+      "zhTitle": "双踪法测电容与等效串联电阻",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/rlc-capacitor.jpg",
+      "video": null,
+      "goal": "Measure the capacitance C (F) and equivalent series resistance ESR (ohms) of capacitor module X. Submit {\"action\":\"answer\",\"C\":number,\"ESR\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"C\":number,\"ESR\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 29,
+      "id": "mutual-inductance",
+      "title": "Dual-Coil Mutual Inductance",
+      "zhTitle": "双线圈互感测量",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/mutual-inductance.jpg",
+      "video": null,
+      "goal": "Measure the mutual inductance at the two stops A and B in mH. Submit {\"action\":\"answer\",\"A\":number,\"B\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"A\":number,\"B\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 30,
+      "id": "michelson",
+      "title": "Michelson Interferometer Wavelength",
+      "zhTitle": "迈克尔逊干涉仪测波长",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/michelson.jpg",
+      "video": "videos/shot_michelson.mp4",
+      "goal": "Measure the wavelength of the light source, in nm. Submit {\"action\":\"answer\",\"lambda\":number}.",
+      "answerSignature": "answer(lambda)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 31,
+      "id": "michelson-doublet",
+      "title": "Michelson Sodium Doublet",
+      "zhTitle": "迈克耳孙干涉仪测双谱线间距",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/michelson-doublet.jpg",
+      "video": null,
+      "goal": "Measure the wavelength separation of the source’s two spectral lines in nm. Submit {\"action\":\"answer\",\"delta\":number}.",
+      "answerSignature": "answer(delta)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 32,
+      "id": "michelson-linewidth",
+      "title": "Michelson Spectral Linewidth",
+      "zhTitle": "迈克尔逊干涉仪测单线谱宽",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/michelson-linewidth.jpg",
+      "video": null,
+      "goal": "Measure the full width at half maximum of the source’s spectral line, in nm. Submit {\"action\":\"answer\",\"width\":number}.",
+      "answerSignature": "answer(width)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 33,
+      "id": "newtonrings",
+      "title": "Newton's Rings Curvature Radius",
+      "zhTitle": "牛顿环测曲率半径",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/newtonrings.jpg",
+      "video": null,
+      "goal": "Measure the lens radius of curvature in meters. Submit {\"action\":\"answer\",\"R\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"R\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 34,
+      "id": "newtonrings-liquid",
+      "title": "Newton's Rings Refractive Index",
+      "zhTitle": "牛顿环测液体折射率",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/newtonrings-liquid.jpg",
+      "video": null,
+      "goal": "Measure the liquid refractive index and submit {\"action\":\"answer\",\"n\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"n\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 35,
+      "id": "trifilar",
+      "title": "Trifilar Pendulum Moment of Inertia",
+      "zhTitle": "三线摆测转动惯量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/trifilar.jpg",
+      "video": null,
+      "goal": "Measure specimen X's moment of inertia about its symmetry axis, in kg·m². Submit {\"action\":\"answer\",\"I\":number}.",
+      "answerSignature": "answer(I)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 36,
+      "id": "trifilar-offset",
+      "title": "Offset Mass Inertia Theorem",
+      "zhTitle": "三线摆偏轴质量与惯量测量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/trifilar-offset.jpg",
+      "video": null,
+      "goal": "Measure the mass m in kg and centroidal axial moment of inertia I in kg·m² of either identical specimen. Submit {\"action\":\"answer\",\"m\":number,\"I\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"m\":number,\"I\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 37,
+      "id": "torsion-wire",
+      "title": "Torsion Pendulum Shear Modulus",
+      "zhTitle": "扭摆测金属丝剪切模量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/torsion-wire.jpg",
+      "video": null,
+      "goal": "Measure the shear modulus of the wire in GPa and submit {\"action\":\"answer\",\"G\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"G\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 38,
+      "id": "young",
+      "title": "Optical Lever Young's Modulus",
+      "zhTitle": "光杠杆测杨氏模量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/young.jpg",
+      "video": null,
+      "goal": "Measure the Young modulus of specimen X. Submit {\"action\":\"answer\",\"E\":number} in pascals.",
+      "answerSignature": "answer(E)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 39,
+      "id": "conductivity",
+      "title": "Steady-State Thermal Conductivity",
+      "zhTitle": "稳态法测导热系数",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/conductivity.jpg",
+      "video": null,
+      "goal": "Measure the thermal conductivity of sample X; submit {k} in W/(m K).",
+      "answerSignature": "answer(...)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 40,
+      "id": "phase-change",
+      "title": "Latent Heat & Melting Calorimetry",
+      "zhTitle": "电加热量热法测熔点与熔化潜热",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/phase-change.jpg",
+      "video": null,
+      "goal": "Measure the melting temperature and specific latent heat of fusion of specimen X. Submit {\"action\":\"answer\",\"Tm\":number,\"L\":number}, in °C and J/kg respectively.",
+      "answerSignature": "answer(Tm,L)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 41,
+      "id": "hysteresis",
+      "title": "Ferromagnetic Hysteresis Loop",
+      "zhTitle": "磁滞回线测剩磁与矫顽力",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/hysteresis.jpg",
+      "video": null,
+      "goal": "Measure the sample's quasi-static major-loop remanence Br (T) and coercive field Hc (A/m); submit {Br,Hc}.",
+      "answerSignature": "answer(...)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 42,
+      "id": "zeeman",
+      "title": "Normal Zeeman Magnetic Splitting",
+      "zhTitle": "正常塞曼效应测磁场",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/zeeman.jpg",
+      "video": null,
+      "goal": "Measure the magnetic-field magnitude at the lamp under the marked excitation condition. Submit {\"action\":\"answer\",\"B\":tesla}.",
+      "answerSignature": "answer(B)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 43,
+      "id": "franckhertz",
+      "title": "Franck-Hertz Excitation Energy",
+      "zhTitle": "弗兰克–赫兹测激发能",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/franckhertz.jpg",
+      "video": "videos/shot_franckhertz.mp4",
+      "goal": "Measure the first excitation energy of gas X, in electronvolts. Submit {\"action\":\"answer\",\"E\":number}.",
+      "answerSignature": "answer(E)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 44,
+      "id": "radioactivity",
+      "title": "Gamma Attenuation Coefficient",
+      "zhTitle": "放射性吸收测衰减系数",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/radioactivity.jpg",
+      "video": null,
+      "goal": "Measure the linear attenuation coefficient of material S, in m^-1. Submit {\"action\":\"answer\",\"mu\":number}.",
+      "answerSignature": "answer(mu)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 45,
+      "id": "oildrop",
+      "title": "Millikan Oil Drop Elementary Charge",
+      "zhTitle": "模拟环境中油滴测基本电荷",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/oildrop.jpg",
+      "video": null,
+      "goal": "Measure the elementary charge in this simulated environment, in coulombs. Submit {\"action\":\"answer\",\"e\":number}.",
+      "answerSignature": "answer(e)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 46,
+      "id": "spectrometer",
+      "title": "Grating Spectrometer Wavelength",
+      "zhTitle": "分光计测单色光波长",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/spectrometer.jpg",
+      "video": null,
+      "goal": "Measure the wavelength of the monochromatic light and submit {lambda} in nm.",
+      "answerSignature": "answer(lambda)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 47,
+      "id": "grating-spacing",
+      "title": "Spectrometer Grating Pitch",
+      "zhTitle": "分光计测光栅间距",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/grating-spacing.jpg",
+      "video": null,
+      "goal": "Measure the grating period and submit {d} in micrometres.",
+      "answerSignature": "answer(d)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 48,
+      "id": "photoelectric",
+      "title": "Photoelectric Planck's Constant",
+      "zhTitle": "光电效应测普朗克常量与逸出功",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/photoelectric.jpg",
+      "video": null,
+      "goal": "In this simulated environment, measure the effective Planck constant h (J*s) and the photocathode work function phi (eV). Submit {\"action\":\"answer\",\"h\":number,\"phi\":number}.",
+      "answerSignature": "answer(h,phi)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 49,
+      "id": "waveplate",
+      "title": "Quarter-Wave Plate Retardance",
+      "zhTitle": "波片相位延迟量测量",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/waveplate.jpg",
+      "video": null,
+      "goal": "Measure the normal-incidence retardance of plate X at the source wavelength; submit {delta} in degrees in [0,180].",
+      "answerSignature": "answer(...)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 50,
+      "id": "stokes",
+      "title": "Polarized Beam Stokes Vector",
+      "zhTitle": "测量光束的斯托克斯参数",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/stokes.jpg",
+      "video": null,
+      "goal": "Measure the normalized Stokes parameters of the emitted beam. Use time-averaged intensities and correlations in the transverse basis (e0,e1)=(+Y,−Z), with s1=(|E0|²−|E1|²)/S0, s2=2 Re(E0*E1)/S0, and s3=2 Im(E0*E1)/S0; * denotes complex conjugation of E0. Submit {\"action\":\"answer\",\"s1\":number,\"s2\":number,\"s3\":number}.",
+      "answerSignature": "{\"action\":\"answer\",\"s1\":number,\"s2\":number,\"s3\":number}",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 51,
+      "id": "zeemanem",
+      "title": "Anomalous Zeeman Charge-to-Mass",
+      "zhTitle": "汞反常塞曼测电子荷质比",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/zeemanem.jpg",
+      "video": null,
+      "goal": "Measure the effective electron charge-to-mass ratio in this simulated environment. Submit {\"action\":\"answer\",\"em\":C_per_kg}.",
+      "answerSignature": "answer(em)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 52,
+      "id": "halflife",
+      "title": "Radioactive Isotope Half-Life",
+      "zhTitle": "放射源半衰期测量",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": true,
+      "thumb": "thumbs/halflife.jpg",
+      "video": null,
+      "goal": "Measure the half-life of the source, in seconds. Submit {\"action\":\"answer\",\"T_half\":number}.",
+      "answerSignature": "answer(T_half)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 53,
+      "id": "thermal-expansion",
+      "title": "Solid Linear Thermal Expansion",
+      "zhTitle": "固体线膨胀系数测量",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/thermal-expansion.jpg",
+      "video": null,
+      "goal": "Measure the specimen’s linear thermal expansion coefficient. Submit {\"action\":\"answer\",\"alpha\":number} in units of 10⁻⁶/K.",
+      "answerSignature": "answer(alpha)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 54,
+      "id": "capillary-tension",
+      "title": "Capillary Rise Surface Tension",
+      "zhTitle": "液体表面张力测量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Fluids",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/capillary-tension.jpg",
+      "video": null,
+      "goal": "Measure the sample liquid’s surface tension. Submit {\"action\":\"answer\",\"sigma\":number} in mN/m.",
+      "answerSignature": "answer(sigma)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 55,
+      "id": "cart-collision",
+      "title": "Collision Restitution Coefficient",
+      "zhTitle": "双滑块碰撞恢复系数测量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/cart-collision.jpg",
+      "video": "videos/shot_cart_collision.mp4",
+      "goal": "Measure the coefficient of restitution of the two carts. Submit {\"action\":\"answer\",\"e\":number}, dimensionless.",
+      "answerSignature": "answer(e)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 56,
+      "id": "rc-transient",
+      "title": "RC Step Transient Time Constant",
+      "zhTitle": "RC 暂态法测电容",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/rc-transient.jpg",
+      "video": null,
+      "goal": "Measure the capacitance of the sample. Submit {\"action\":\"answer\",\"C\":number} in microfarads.",
+      "answerSignature": "answer(C)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 57,
+      "id": "prism-index",
+      "title": "Minimum Deviation Prism Index",
+      "zhTitle": "棱镜折射率测量",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/prism-index.jpg",
+      "video": "videos/shot_prism_index.mp4",
+      "goal": "Measure the prism’s refractive index at the supplied wavelength. Submit {\"action\":\"answer\",\"n\":number}, dimensionless.",
+      "answerSignature": "answer(n)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 58,
+      "id": "hydrostatic-density",
+      "title": "Archimedes Buoyancy Density",
+      "zhTitle": "固体和液体密度测量",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Fluids",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/hydrostatic-density.jpg",
+      "video": null,
+      "goal": "Measure the densities of the solid specimen and the test liquid. Submit {\"action\":\"answer\",\"rhoSolid\":number,\"rhoLiquid\":number} in kg/m³.",
+      "answerSignature": "answer(rhoSolid,rhoLiquid)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 59,
+      "id": "gas-adiabatic",
+      "title": "Adiabatic Expansion Gamma Index",
+      "zhTitle": "气体绝热指数测量",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/gas-adiabatic.jpg",
+      "video": "videos/shot_gas_adiabatic.mp4",
+      "goal": "Measure the sample gas heat capacity ratio. Submit {\"action\":\"answer\",\"gamma\":number}, dimensionless.",
+      "answerSignature": "answer(gamma)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 60,
+      "id": "helmholtz-turns",
+      "title": "Helmholtz Coil Turns Verification",
+      "zhTitle": "亥姆霍兹线圈匝数测量",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/helmholtz-turns.jpg",
+      "video": null,
+      "goal": "Measure the number of turns in each of the two identical coils. Submit {\"action\":\"answer\",\"N\":number}, in turns per coil.",
+      "answerSignature": "answer(N)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 61,
+      "id": "ac-inductance",
+      "title": "Maxwell-Wien AC Bridge Inductance",
+      "zhTitle": "交流电桥测电感及损耗",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/ac-inductance.jpg",
+      "video": null,
+      "goal": "Measure the coil inductance and equivalent series resistance. Submit {\"action\":\"answer\",\"L\":number,\"R\":number}, with L in mH and R in ohms.",
+      "answerSignature": "answer(L,R)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 62,
+      "id": "thermistor-beta",
+      "title": "NTC Thermistor Beta Parameter",
+      "zhTitle": "热敏电阻温度特性测量",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/thermistor-beta.jpg",
+      "video": null,
+      "goal": "Measure the thermistor beta and its resistance at 25 °C. Submit {\"action\":\"answer\",\"beta\":number,\"R25\":number}, with beta in K and R25 in kΩ.",
+      "answerSignature": "answer(beta,R25)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 63,
+      "id": "fresnel-biprism",
+      "title": "Fresnel Biprism Interference",
+      "zhTitle": "菲涅耳双棱镜测波长",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/fresnel-biprism.jpg",
+      "video": null,
+      "goal": "Measure the wavelength of the light source. Submit {\"action\":\"answer\",\"lambda\":number} in nm.",
+      "answerSignature": "answer(lambda)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 64,
+      "id": "abbe-index",
+      "title": "Abbe Refractometer Liquid Index",
+      "zhTitle": "阿贝折射仪测液体折射率",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/abbe-index.jpg",
+      "video": null,
+      "goal": "Measure the refractive index of the liquid. Submit {\"action\":\"answer\",\"n\":number}, dimensionless.",
+      "answerSignature": "answer(n)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 65,
+      "id": "doppler-sound",
+      "title": "Ultrasonic Doppler Velocity",
+      "zhTitle": "超声多普勒测声速",
+      "discipline": "Mechanics",
+      "subDiscipline": "Acoustics & Waves",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/doppler-sound.jpg",
+      "video": null,
+      "goal": "Measure the sound speed of the medium. Submit {\"action\":\"answer\",\"c\":number} in m/s.",
+      "answerSignature": "answer(c)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 66,
+      "id": "electron-diffraction",
+      "title": "Electron Diffraction Bragg Lattice",
+      "zhTitle": "电子衍射测晶面间距",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/electron-diffraction.jpg",
+      "video": "videos/shot_electron.mp4",
+      "goal": "Measure the two crystal plane spacings. Submit {\"action\":\"answer\",\"d1\":number,\"d2\":number} in nm with d1 greater than d2.",
+      "answerSignature": "answer(d1,d2)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 67,
+      "id": "heat-engine-pv",
+      "title": "Heat Engine P-V Cycle Net Work",
+      "zhTitle": "热机循环测净功",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "transient",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/heat-engine-pv.jpg",
+      "video": "videos/shot_heat_engine.mp4",
+      "goal": "Measure the net work done by the gas per quasi-static Stirling cycle between 55 and 90 mL using the two reservoirs. Submit {\"action\":\"answer\",\"W\":number} in joules.",
+      "answerSignature": "answer(W)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 68,
+      "id": "diode-iv",
+      "title": "PN Diode Ideality I-V Curve",
+      "zhTitle": "二极管伏安特性测量",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/diode-iv.jpg",
+      "video": null,
+      "goal": "Measure the diode ideality factor and reverse saturation current. Submit {\"action\":\"answer\",\"eta\":number,\"Is\":number} with Is in nA.",
+      "answerSignature": "answer(eta,Is)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 69,
+      "id": "telescope-magnification",
+      "title": "Refracting Telescope Magnification",
+      "zhTitle": "望远镜角放大率测量",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/telescope-magnification.jpg",
+      "video": null,
+      "goal": "Measure the magnitude of the telescope angular magnification. Submit {\"action\":\"answer\",\"M\":number}, dimensionless.",
+      "answerSignature": "answer(M)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 70,
+      "id": "microscope-magnification",
+      "title": "Compound Microscope Magnification",
+      "zhTitle": "复合显微镜角放大率测量",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/microscope-magnification.jpg",
+      "video": null,
+      "goal": "Measure the absolute angular magnification of the microscope relative to viewing from 250 mm. Submit {\"action\":\"answer\",\"M\":number}, dimensionless.",
+      "answerSignature": "answer(M)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 71,
+      "id": "meter-conversion",
+      "title": "Ammeter-Voltmeter Shunt Design",
+      "zhTitle": "表头参数测量与量程改装",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/meter-conversion.jpg",
+      "video": null,
+      "goal": "Measure the movement’s coil resistance and full-scale current, then configure the meter for the indicated range. Submit {\"action\":\"answer\",\"Rg\":number,\"Ig\":number,\"Rx\":number}, with Rg and Rx in ohms and Ig in µA.",
+      "answerSignature": "answer(Rg,Ig,Rx)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 72,
+      "id": "gmr-ratio",
+      "title": "Giant Magnetoresistance Saturation",
+      "zhTitle": "巨磁电阻比与饱和磁场测量",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "nullfield",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/gmr-ratio.jpg",
+      "video": null,
+      "goal": "Measure the maximum giant magnetoresistance ratio (relative to the parallel-state resistance) and saturation field magnitude. Submit {\"action\":\"answer\",\"MR\":number,\"Bs\":number}, with MR in percent and Bs in mT.",
+      "answerSignature": "answer(MR,Bs)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 73,
+      "id": "kater-pendulum",
+      "title": "Reversible Kater Pendulum Gravity",
+      "zhTitle": "开特摆测重力加速度",
+      "discipline": "Mechanics",
+      "subDiscipline": "Mechanics & Metrology",
+      "capability": "metrology",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/kater-pendulum.jpg",
+      "video": null,
+      "goal": "Measure the local gravitational acceleration using the reversible pendulum. Submit {\"action\":\"answer\",\"g\":number} in m/s².",
+      "answerSignature": "answer(g)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 74,
+      "id": "cooling-specific-heat",
+      "title": "Newton Cooling Specific Heat",
+      "zhTitle": "冷却法测金属比热容",
+      "discipline": "Thermodynamics",
+      "subDiscipline": "Thermodynamics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/cooling-specific-heat.jpg",
+      "video": null,
+      "goal": "Measure the specific heat capacity of the unknown metal sample. Submit {\"action\":\"answer\",\"c\":number} in J/(kg·K).",
+      "answerSignature": "answer(c)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 75,
+      "id": "fourier-spatial-filter",
+      "title": "4f Optical Spatial Filtering",
+      "zhTitle": "4f 空间滤波测截止频率",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "alignment",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/fourier-spatial-filter.jpg",
+      "video": null,
+      "goal": "Measure the spatial cutoff frequency of the installed low-pass filter along the displayed grating axis. Submit {\"action\":\"answer\",\"fc\":number} in cycles/mm.",
+      "answerSignature": "answer(fc)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 76,
+      "id": "microwave-bragg",
+      "title": "Microwave Bragg Crystal Diffraction",
+      "zhTitle": "微波布拉格衍射测晶面间距",
+      "discipline": "Electromagnetism",
+      "subDiscipline": "Electromagnetism",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/microwave-bragg.jpg",
+      "video": "videos/shot_microwave_bragg.mp4",
+      "goal": "Measure the plane spacing of the periodic specimen using microwave diffraction. Submit {\"action\":\"answer\",\"d\":number} in mm.",
+      "answerSignature": "answer(d)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 77,
+      "id": "cw-nmr",
+      "title": "Continuous-Wave NMR Gyromagnetic Ratio",
+      "zhTitle": "连续波核磁共振测旋磁比",
+      "discipline": "Modern Physics",
+      "subDiscipline": "Modern Physics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/cw-nmr.jpg",
+      "video": null,
+      "goal": "Measure the magnitude of the sample gyromagnetic ratio in frequency units. Submit {\"action\":\"answer\",\"gamma\":number} in MHz/T.",
+      "answerSignature": "answer(gamma)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    },
+    {
+      "index": 78,
+      "id": "monochromator-calibration",
+      "title": "Grating Monochromator Calibration",
+      "zhTitle": "单色仪定标与未知光谱线波长测量",
+      "discipline": "Optics",
+      "subDiscipline": "Optics",
+      "capability": "inference",
+      "configs": 2,
+      "inCore33": false,
+      "thumb": "thumbs/monochromator-calibration.jpg",
+      "video": null,
+      "goal": "Use the reference source to calibrate the monochromator and measure the unknown emission wavelength. Submit {\"action\":\"answer\",\"lambda\":number} in nm.",
+      "answerSignature": "answer(lambda)",
+      "actions": [
+        "look",
+        "front",
+        "pick",
+        "move",
+        "rotate",
+        "release",
+        "turn",
+        "press",
+        "wait",
+        "answer"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# Dependencies & build outputs
+node_modules/
+dist/
+.vite/
+
+# macOS & logs
+.DS_Store
+*.log
+
+# Regenerable overview intermediates
+overview/assets/
+overview/overview.html
