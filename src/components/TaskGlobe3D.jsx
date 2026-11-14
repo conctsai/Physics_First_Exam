@@ -298,13 +298,12 @@ export default function TaskGlobe3D({ data, onSelectLab }) {
           }}
         >
           <div>
-            <div className="eyebrow">TASK DIVERSITY SPHERE</div>
+            <div className="eyebrow">TASK SPHERE</div>
             <h2 className="section-title">
               Explore {visibleLabs.length} Physics Laboratories
             </h2>
             <p className="section-sub">
-              Drag to orbit, click any glowing node to open its physics objective &amp;
-              instrument controls, or filter by discipline and capability axis.
+              Drag to orbit or click any node to inspect the lab.
             </p>
           </div>
 
@@ -481,8 +480,7 @@ export default function TaskGlobe3D({ data, onSelectLab }) {
                 <div style={{ fontSize: 12.5, color: "#94a3b8", lineHeight: 1.55 }}>
                   <Sparkles size={16} color="#38bdf8" style={{ marginBottom: 8 }} />
                   <div>
-                    Larger glowing nodes feature custom SSAA studio rigs. Hover any node to
-                    preview or click to inspect full prompt &amp; action schema.
+                    Hover a node to preview, or click to inspect lab details.
                   </div>
                 </div>
               )}

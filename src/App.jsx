@@ -3,6 +3,7 @@ import { Play, X } from "lucide-react";
 import benchmarkData from "./data/benchmark.json";
 import Navbar from "./components/Navbar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
+import OverviewVideoSection from "./components/OverviewVideoSection.jsx";
 import InteractiveShowcase from "./components/InteractiveShowcase.jsx";
 import StatsRibbon from "./components/StatsRibbon.jsx";
 import LeaderboardSection from "./components/LeaderboardSection.jsx";
@@ -56,7 +57,12 @@ export default function App() {
           onSelectLab={setSelectedLab}
         />
 
-        <InteractiveShowcase onOpenFilm={() => setShowFilmModal(true)} />
+        <OverviewVideoSection
+          onOpenFilm={() => setShowFilmModal(true)}
+          modalOpen={showFilmModal}
+        />
+
+        <InteractiveShowcase />
 
         <StatsRibbon summary={benchmarkData.summary} />
 
@@ -67,7 +73,7 @@ export default function App() {
         <LabsCatalogSection data={benchmarkData} onSelectLab={setSelectedLab} />
       </main>
 
-      {/* Full Overview Film Modal (87.5s v3 Video with Audio Controls) */}
+      {/* Full Overview Film Modal (3m 39s v5 Video with Audio Controls) */}
       {showFilmModal && (
         <div
           className="modal-backdrop"
@@ -88,10 +94,10 @@ export default function App() {
             >
               <div>
                 <div className="mono" style={{ fontSize: 11, color: "#38bdf8" }}>
-                  PHYSICS FIRST EXAM · OVERVIEW FILM (87.5s · 1080p)
+                  PHYSICS FIRST EXAM
                 </div>
                 <h3 className="display" style={{ fontSize: 21, fontWeight: 700 }}>
-                  Benchmark Walkthrough &amp; SSAA Apparatus Demos
+                  Overview Video
                 </h3>
               </div>
               <button
@@ -299,7 +305,7 @@ export default function App() {
 
               {selectedLab.video && (
                 <div className="mono" style={{ fontSize: 11.5, color: "var(--std-ink)", display: "flex", alignItems: "center", gap: 6 }}>
-                  <Play size={12} /> Playing 1080p SSAA hardware-accelerated WebGL lab showcase
+                  <Play size={12} /> 3D apparatus walkthrough
                 </div>
               )}
             </div>

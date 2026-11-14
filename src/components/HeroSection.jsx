@@ -186,10 +186,9 @@ export default function HeroSection({ data, onOpenFilm, onSelectLab, theme }) {
               maxWidth: 610,
             }}
           >
-            <strong>Discovery begins with measurement.</strong>{" "}
             {data.summary.taskCount} verifiable 3D WebGL laboratories across{" "}
-            {data.summary.configCount} apparatus configurations — randomized physical
-            laws, 1280×720 pixel-only control, zero oracle shortcuts.
+            {data.summary.configCount} apparatus configurations — pixel-only vision
+            control and randomized physical laws.
           </p>
 
           <div
@@ -217,7 +216,7 @@ export default function HeroSection({ data, onOpenFilm, onSelectLab, theme }) {
               }}
             >
               <Film size={15} />
-              <span>Watch 87s Overview Film</span>
+              <span>Watch Video</span>
             </button>
 
             <a href="#labs" className="btn">
@@ -358,7 +357,7 @@ export default function HeroSection({ data, onOpenFilm, onSelectLab, theme }) {
           backdropFilter: "blur(8px)",
         }}
       >
-        <span>Explore Showcase &amp; Law Scrubber</span>
+        <span>Explore Benchmark</span>
         <ArrowDown size={14} />
       </a>
     </section>

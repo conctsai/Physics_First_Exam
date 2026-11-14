@@ -114,7 +114,7 @@ export default function Navbar({ theme, onToggleTheme, activeSection, onOpenFilm
             }}
           >
             <Film size={13} />
-            <span>87s Film</span>
+            <span>Video</span>
           </button>
 
           <button

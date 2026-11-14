@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Film, Play, Sliders } from "lucide-react";
+import { Play, Sliders } from "lucide-react";
 
 function Tex({ tex, display = false, style = {} }) {
   const html = useMemo(() => {
@@ -331,7 +331,7 @@ function PhysicsLawDiagram({ scene, param }) {
   );
 }
 
-export default function InteractiveShowcase({ onOpenFilm }) {
+export default function InteractiveShowcase() {
   const [activeId, setActiveId] = useState("optics");
   const [useAlt, setUseAlt] = useState(false);
 
@@ -349,7 +349,7 @@ export default function InteractiveShowcase({ onOpenFilm }) {
   const currentParam = params[activeScene.id];
 
   return (
-    <section id="showcase" className="section">
+    <section id="showcase" className="section" style={{ paddingTop: 48 }}>
       <div className="container">
         <div
           style={{
@@ -362,24 +362,14 @@ export default function InteractiveShowcase({ onOpenFilm }) {
           }}
         >
           <div>
-            <div className="eyebrow">INTERACTIVE BENCHMARK SHOWCASE</div>
+            <div className="eyebrow">FIVE DISCIPLINES</div>
             <h2 className="section-title">
               Five Disciplines · Verifiable Physical Control
             </h2>
             <p className="section-sub">
-              Switch disciplines to inspect SSAA 3D apparatus renders alongside a live
-              quantitative physical-law scrubber — or launch the full 87.5-second
-              overview film.
+              Interactive 3D lab scenes paired with live physical-law controls.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={onOpenFilm}
-            className="btn btn-primary"
-          >
-            <Film size={15} />
-            <span>Play 87.5s Overview Film</span>
-          </button>
         </div>
 
         {/* Discipline Pill Switcher */}
@@ -482,7 +472,7 @@ export default function InteractiveShowcase({ onOpenFilm }) {
                   className="mono"
                   style={{ fontSize: 10.5, color: activeScene.accent, letterSpacing: "0.14em" }}
                 >
-                  {activeScene.discipline.toUpperCase()} · {useAlt ? "SPHERE FEATURE" : "SSAA HERO SHOT"}
+                  {activeScene.discipline.toUpperCase()}
                 </div>
                 <div style={{ fontSize: 15, fontWeight: 700 }}>{currentTitle}</div>
               </div>
@@ -505,7 +495,7 @@ export default function InteractiveShowcase({ onOpenFilm }) {
                 }}
               >
                 <Play size={12} />
-                <span>{useAlt ? "Back to Hero Shot" : `Switch to ${activeScene.altLabel}`}</span>
+                <span>{useAlt ? "Primary" : activeScene.altLabel}</span>
               </button>
             </div>
           </div>

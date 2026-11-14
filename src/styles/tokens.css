@@ -248,3 +248,95 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Leaderboard & catalog subtle motion */
+@keyframes pfeShimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(260%);
+  }
+}
+
+@keyframes pfeRevealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pfePulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0);
+  }
+}
+
+.lb-row {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lb-row:hover {
+  background-color: var(--surface-2) !important;
+}
+
+.lb-bar-fill {
+  position: relative;
+  overflow: hidden;
+  transition: width 0.72s cubic-bezier(0.22, 1, 0.36, 1), filter 0.2s ease;
+}
+
+.lb-bar-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.38) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: pfeShimmer 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.lb-row:hover .lb-bar-fill {
+  filter: brightness(1.1);
+}
+
+.lb-disc-card {
+  animation: pfeRevealUp 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.lb-disc-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-2) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+.hm-cell {
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.hm-cell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
+}
+
+.lab-card-thumb {
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lab-card:hover .lab-card-thumb {
+  transform: scale(1.035);
+}

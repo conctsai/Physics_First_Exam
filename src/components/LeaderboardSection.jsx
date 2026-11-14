@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, Medal } from "lucide-react";
 
 const TABS = [
@@ -15,9 +15,77 @@ const DISC_ORDER = [
   "Modern Physics",
 ];
 
+/**
+ * Smoothly animates a numeric percentage readout whenever `target` or `active`
+ * transitions (e.g., on scroll-in or tab switch).
+ */
+function AnimatedPct({ target, active, delay = 0 }) {
+  const [val, setVal] = useState(0);
+
+  useEffect(() => {
+    if (!active) {
+      setVal(0);
+      return;
+    }
+    let raf = 0;
+    const duration = 680;
+    const startAt = performance.now() + delay;
+
+    const tick = (now) => {
+      if (now < startAt) {
+        raf = requestAnimationFrame(tick);
+        return;
+      }
+      const u = Math.min(1, (now - startAt) / duration);
+      // Cubic ease-out matching bar width transition
+      const eased = 1 - Math.pow(1 - u, 3);
+      setVal(target * eased);
+      if (u < 1) raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, active, delay]);
+
+  return <>{val.toFixed(1)}%</>;
+}
+
 export default function LeaderboardSection({ data, onSelectLab }) {
+  const sectionRef = useRef(null);
   const [tab, setTab] = useState("cfg");
   const [expandedPair, setExpandedPair] = useState(data.pairs[0]?.pairId || null);
+  const [revealed, setRevealed] = useState(false);
+  const [animCycle, setAnimCycle] = useState(0);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.16 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleTabChange = (nextTab) => {
+    setTab(nextTab);
+    if (nextTab === "cfg" || nextTab === "exp") {
+      // Trigger staggered bar grow + count-up replay across tab switch
+      setRevealed(false);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setRevealed(true);
+          setAnimCycle((c) => c + 1);
+        });
+      });
+    }
+  };
 
   const labLookup = Object.fromEntries(data.labs.map((l) => [l.id, l]));
 
@@ -25,7 +93,7 @@ export default function LeaderboardSection({ data, onSelectLab }) {
     idx === 0 ? "#eab308" : idx === 1 ? "#94a3b8" : idx === 2 ? "#d97706" : null;
 
   return (
-    <section id="leaderboard" className="section">
+    <section id="leaderboard" ref={sectionRef} className="section">
       <div className="container">
         <div
           style={{
@@ -38,24 +106,22 @@ export default function LeaderboardSection({ data, onSelectLab }) {
           }}
         >
           <div>
-            <div className="eyebrow">BENCHMARK LEADERBOARD</div>
+            <div className="eyebrow">LEADERBOARD</div>
             <h2 className="section-title">
               Frontier Model Performance ({data.summary.coreExperimentCount} Core
               Tasks · {data.summary.coreConfigCount} Setups)
             </h2>
             <p className="section-sub">
-              Vision-only evaluation across {data.summary.modelHarnessPairCount}{" "}
-              model–harness pairs — overall config pass:{" "}
+              Config pass:{" "}
               <strong style={{ color: "var(--priv-ink)" }}>
                 {data.summary.overallCfgPassPct}% ({data.summary.passedRollouts}/
                 {data.summary.scheduledRollouts})
               </strong>
-              , strict task pass:{" "}
+              {" · "}Strict task pass:{" "}
               <strong style={{ color: "var(--std-ink)" }}>
                 {data.summary.overallExpPassPct}% ({data.summary.successfulExpUnits}/
                 {data.summary.totalExpUnits})
               </strong>
-              . Click any row to inspect discipline sub-scores.
             </p>
           </div>
 
@@ -74,7 +140,7 @@ export default function LeaderboardSection({ data, onSelectLab }) {
               <button
                 key={t.id}
                 type="button"
-                onClick={() => setTab(t.id)}
+                onClick={() => handleTabChange(t.id)}
                 style={{
                   border: "none",
                   borderRadius: 999,
@@ -85,6 +151,7 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                   background: tab === t.id ? "var(--surface)" : "transparent",
                   color: tab === t.id ? "var(--ink)" : "var(--ink-2)",
                   boxShadow: tab === t.id ? "0 1px 4px rgba(15,23,42,0.12)" : "none",
+                  transition: "background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease",
                 }}
               >
                 {t.label}
@@ -114,8 +181,8 @@ export default function LeaderboardSection({ data, onSelectLab }) {
               <span>MODEL / HARNESS</span>
               <span>
                 {tab === "exp"
-                  ? "STRICT EXPERIMENT SUCCESS (ALL CONFIGS · 33 TASKS)"
-                  : "CONFIGURATION PASS (74 SETUPS)"}
+                  ? "EXPERIMENT PASS (33 TASKS)"
+                  : "CONFIG PASS (74 SETUPS)"}
               </span>
               <span style={{ textAlign: "right" }}>PASS RATE</span>
             </div>
@@ -128,15 +195,20 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                   ? `${p.successfulExperiments}/${p.totalExperiments}`
                   : `${p.passedConfigurations}/${p.totalConfigurations}`;
               const mc = medalColor(idx);
+              const barWidth = revealed && pct > 0 ? `${Math.max(2.6, pct)}%` : "0%";
 
               return (
                 <div
                   key={p.pairId}
-                  style={{ borderBottom: "1px solid var(--line)" }}
+                  style={{
+                    borderBottom: "1px solid var(--line)",
+                    animation: `pfeRevealUp 0.36s cubic-bezier(0.22, 1, 0.36, 1) ${idx * 35}ms both`,
+                  }}
                 >
                   <button
                     type="button"
                     onClick={() => setExpandedPair(isOpen ? null : p.pairId)}
+                    className="lb-row"
                     style={{
                       width: "100%",
                       display: "grid",
@@ -158,9 +230,9 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                       {mc ? <Medal size={16} color={mc} /> : <span>#{idx + 1}</span>}
                     </div>
 
-                    <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "nowrap", minWidth: 0 }}>
                       {isOpen ? <ChevronDown size={15} /> : <ChevronRight size={15} />}
-                      <span style={{ fontWeight: 700, fontSize: 15 }}>{p.label}</span>
+                      <span style={{ fontWeight: 700, fontSize: 15, whiteSpace: "nowrap" }}>{p.label}</span>
                       <span
                         className="mono"
                         style={{
@@ -170,6 +242,7 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                           background: "var(--surface-2)",
                           border: "1px solid var(--line)",
                           color: "var(--ink-2)",
+                          whiteSpace: "nowrap",
                         }}
                       >
                         {p.harness}
@@ -183,22 +256,30 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                           borderRadius: 999,
                           background: "var(--surface-3)",
                           overflow: "hidden",
+                          position: "relative",
                         }}
                       >
                         <div
+                          className={pct > 0 ? "lb-bar-fill" : undefined}
                           style={{
-                            width: `${pct > 0 ? Math.max(2.2, pct) : 0}%`,
+                            width: barWidth,
                             height: "100%",
                             borderRadius: 999,
                             background: p.color,
-                            transition: "width 0.35s ease",
+                            transitionDelay: `${idx * 45}ms`,
+                            boxShadow: idx === 0 && pct > 0 ? `0 0 12px ${p.color}55` : "none",
                           }}
                         />
                       </div>
                     </div>
 
                     <div className="num" style={{ textAlign: "right", fontWeight: 700, fontSize: 15 }}>
-                      {pct.toFixed(1)}%{" "}
+                      <AnimatedPct
+                        key={`${p.pairId}-${tab}-${animCycle}`}
+                        target={pct}
+                        active={revealed}
+                        delay={idx * 45}
+                      />{" "}
                       <span className="mono" style={{ fontSize: 11.5, color: "var(--ink-3)", fontWeight: 500 }}>
                         ({numTxt})
                       </span>
@@ -217,8 +298,9 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                         gap: 12,
                       }}
                     >
-                      {DISC_ORDER.map((d) => {
+                      {DISC_ORDER.map((d, dIdx) => {
                         const ds = p.disciplines[d];
+                        const dsPct = ds ? (tab === "exp" ? ds.expPct : ds.cfgPct) : 0;
                         const val = ds
                           ? tab === "exp"
                             ? `${ds.expPassed}/${ds.expTotal} (${ds.expPct}%)`
@@ -227,11 +309,13 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                         return (
                           <div
                             key={d}
+                            className="lb-disc-card"
                             style={{
                               background: "var(--surface)",
                               border: "1px solid var(--line)",
                               borderRadius: 10,
                               padding: "10px 12px",
+                              animationDelay: `${dIdx * 45}ms`,
                             }}
                           >
                             <div className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>
@@ -239,6 +323,25 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                             </div>
                             <div className="num" style={{ fontWeight: 700, fontSize: 14, marginTop: 3 }}>
                               {val}
+                            </div>
+                            <div
+                              style={{
+                                marginTop: 8,
+                                height: 4,
+                                borderRadius: 999,
+                                background: "var(--surface-3)",
+                                overflow: "hidden",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  width: `${dsPct}%`,
+                                  height: "100%",
+                                  borderRadius: 999,
+                                  background: p.color,
+                                  transition: "width 0.55s cubic-bezier(0.22, 1, 0.36, 1)",
+                                }}
+                              />
                             </div>
                           </div>
                         );
@@ -253,7 +356,14 @@ export default function LeaderboardSection({ data, onSelectLab }) {
 
         {/* 33x8 Heatmap Matrix View */}
         {tab === "heatmap" && (
-          <div className="card" style={{ overflowX: "auto", padding: 18 }}>
+          <div
+            className="card"
+            style={{
+              overflowX: "auto",
+              padding: 18,
+              animation: "pfeRevealUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) both",
+            }}
+          >
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
               <thead>
                 <tr style={{ borderBottom: "1px solid var(--line-2)" }}>
@@ -273,6 +383,7 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                 {data.matrix.map((row) => (
                   <tr
                     key={row.id}
+                    className="lb-row"
                     onClick={() => labLookup[row.id] && onSelectLab(labLookup[row.id])}
                     style={{
                       borderBottom: "1px solid var(--line)",
@@ -305,7 +416,7 @@ export default function LeaderboardSection({ data, onSelectLab }) {
                       return (
                         <td key={p.pairId} style={{ padding: 4, textAlign: "center" }}>
                           <span
-                            className="mono num"
+                            className="mono num hm-cell"
                             style={{
                               display: "inline-block",
                               minWidth: 52,

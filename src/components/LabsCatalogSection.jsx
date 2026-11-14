@@ -50,21 +50,19 @@ export default function LabsCatalogSection({ data, onSelectLab }) {
           }}
         >
           <div>
-            <div className="eyebrow">LABORATORY SUITE &amp; TASK INDEX</div>
+            <div className="eyebrow">TASK CATALOG</div>
             <h2 className="section-title">
               Browse All {data.summary.taskCount} Verifiable Physics Labs
             </h2>
             <p className="section-sub">
-              Every task packages a WebGL physics world, discrete/continuous instrument
-              controls, per-seed randomized constants, and a quantitative tolerance verifier.
-              Click any lab card to inspect its agent prompt, action schema, and pass scores.
+              79 interactive 3D WebGL labs with randomized parameters. Click any card for details.
             </p>
           </div>
 
-          {/* PLE-Bench /tasks style Clean Discipline Quick-Count Summary Table */}
+          {/* Discipline breakdown filter summary */}
           <div className="card" style={{ padding: "14px 18px" }}>
             <div className="mono" style={{ fontSize: 11, color: "var(--ink-3)", marginBottom: 8 }}>
-              DISCIPLINE BREAKDOWN (CLICK TO FILTER)
+              DISCIPLINES
             </div>
             {Object.entries(data.disciplineCounts).map(([dName, count]) => {
               const active = disc === dName;
@@ -162,7 +160,7 @@ export default function LabsCatalogSection({ data, onSelectLab }) {
                 color: onlyCore ? "var(--std-ink)" : "var(--ink)",
               }}
             >
-              Core 33 Evaluated
+              Core 33
             </button>
 
             <button
@@ -178,7 +176,7 @@ export default function LabsCatalogSection({ data, onSelectLab }) {
               }}
             >
               <Play size={12} />
-              <span>HD Studio Rigs</span>
+              <span>With Video</span>
             </button>
 
             <div
@@ -224,7 +222,7 @@ export default function LabsCatalogSection({ data, onSelectLab }) {
               key={lab.id}
               type="button"
               onClick={() => onSelectLab(lab)}
-              className="card"
+              className="card lab-card"
               style={{
                 overflow: "hidden",
                 textAlign: "left",
@@ -243,11 +241,20 @@ export default function LabsCatalogSection({ data, onSelectLab }) {
                 e.currentTarget.style.borderColor = "var(--line)";
               }}
             >
-              <div style={{ position: "relative", height: 140, width: "100%", background: "#0b0e14" }}>
+              <div
+                style={{
+                  position: "relative",
+                  aspectRatio: "16 / 9",
+                  width: "100%",
+                  background: "#0b0e14",
+                  overflow: "hidden",
+                }}
+              >
                 <img
                   src={lab.thumb}
                   alt={lab.title}
                   loading="lazy"
+                  className="lab-card-thumb"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 {lab.inCore33 && (
@@ -290,7 +297,7 @@ export default function LabsCatalogSection({ data, onSelectLab }) {
                       gap: 4,
                     }}
                   >
-                    <Play size={10} /> 3D VIDEO
+                    <Play size={10} /> VIDEO
                   </span>
                 )}
               </div>
